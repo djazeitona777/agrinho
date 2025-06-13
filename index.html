@@ -3,89 +3,314 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cidade e Campo: Uma Perspectiva</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Cidade vs Campo - Estilos de Vida</title>
+    <style>
+        /* Reset e estilos gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Navegação */
+        nav {
+            background-color: #333;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav li {
+            padding: 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #4CAF50;
+        }
+        
+        /* Seções principais */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        h2 {
+            color: #2a5298;
+            padding: 1.5rem;
+            border-bottom: 1px solid #eee;
+            background-color: #f9f9f9;
+        }
+        
+        /* Estilos para as comparações */
+        .comparison {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 1.5rem;
+        }
+        
+        .city, .countryside {
+            flex: 1;
+            min-width: 300px;
+            padding: 1rem;
+            margin: 0.5rem;
+        }
+        
+        .city {
+            border-right: 1px solid #eee;
+        }
+        
+        .image-container {
+            height: 200px;
+            overflow: hidden;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+        
+        h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        /* Galeria */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            padding: 1.5rem;
+        }
+        
+        .gallery-item {
+            height: 200px;
+            overflow: hidden;
+            border-radius: 6px;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 0.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        /* Rodapé */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .comparison {
+                flex-direction: column;
+            }
+            
+            .city {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 2rem;
+                margin-bottom: 1rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-
-    <header class="hero">
-        <h1>Cidade e Campo: Dois Mundos, Uma Conexão</h1>
-        <p>Explore a riqueza de contrastes e a beleza intrínseca que define a vida na cidade e a vida no campo.</p>
+    <header>
+        <h1>Cidade vs Campo</h1>
+        <p>Descubra as diferenças, vantagens e belezas desses dois estilos de vida</p>
     </header>
-
-    <nav class="navbar">
+    
+    <nav>
         <ul>
-            <li><a href="#home">Início</a></li>
-            <li><a href="#cidade">A Cidade em Foco</a></li>
-            <li><a href="#campo">O Campo em Destaque</a></li>
-            <li><a href="#interconexoes">Interconexões</a></li>
-            <li><a href="#contato">Sua Perspectiva</a></li>
+            <li><a href="#comparacao">Comparação</a></li>
+            <li><a href="#cidade">Vida na Cidade</a></li>
+            <li><a href="#campo">Vida no Campo</a></li>
+            <li><a href="#galeria">Galeria</a></li>
         </ul>
     </nav>
-
-    <main>
-        <section id="home" class="content-section">
-            <img src="https://via.placeholder.com/1200x500?text=Imagem+Impactante+Aqui" alt="Imagem que combina cidade e campo" class="hero-image">
-            <h2>Bem-vindo à Jornada Visual</h2>
-            <p>Navegue por nossas seções para descobrir as particularidades e as belezas de cada ambiente, e como eles se influenciam mutuamente.</p>
-        </section>
-
-        <section id="cidade" class="content-section">
-            <h2>A Cidade em Foco</h2>
-            <div class="gallery">
-                <img src="https://via.placeholder.com/400x300?text=Arranha+C%C3%A9us" alt="Arranha Céus">
-                <img src="https://via.placeholder.com/400x300?text=Ruas+Movimentadas" alt="Ruas Movimentadas">
-                <img src="https://via.placeholder.com/400x300?text=Arte+Urbana" alt="Arte Urbana">
+    
+    <div class="container">
+        <section id="comparacao">
+            <h2>Comparação entre Cidade e Campo</h2>
+            <div class="comparison">
+                <div class="city">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Cidade movimentada">
+                    </div>
+                    <h3>Vida Urbana</h3>
+                    <p>A vida na cidade oferece conveniência, acesso a serviços, oportunidades de emprego e uma variedade de opções culturais e de entretenimento.</p>
+                    <ul>
+                        <li>Infraestrutura completa</li>
+                        <li>Diversidade cultural</li>
+                        <li>Oportunidades profissionais</li>
+                        <li>Acesso a tecnologia</li>
+                    </ul>
+                </div>
+                
+                <div class="countryside">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Campo tranquilo">
+                    </div>
+                    <h3>Vida Rural</h3>
+                    <p>A vida no campo proporciona tranquilidade, contato com a natureza, ar puro e um ritmo de vida mais lento e saudável.</p>
+                    <ul>
+                        <li>Qualidade de vida</li>
+                        <li>Contato com a natureza</li>
+                        <li>Alimentos frescos</li>
+                        <li>Menos poluição</li>
+                    </ul>
+                </div>
             </div>
-            <p>A vida urbana pulsa com energia e oportunidades. Grandes centros oferecem acesso a cultura, lazer e diversas opções profissionais. No entanto, o ritmo acelerado e o desafio da sustentabilidade são constantes.</p>
-            <ul>
-                <li>Oportunidades de trabalho e crescimento profissional.</li>
-                <li>Diversidade cultural e opções de lazer.</li>
-                <li>Acesso facilitado a serviços e tecnologia.</li>
-            </ul>
         </section>
-
-        <section id="campo" class="content-section">
-            <h2>O Campo em Destaque</h2>
-            <div class="gallery">
-                <img src="https://via.placeholder.com/400x300?text=Paisagem+Rural" alt="Paisagem Rural">
-                <img src="https://via.placeholder.com/400x300?text=Planta%C3%A7%C3%B5es" alt="Plantações">
-                <img src="https://via.placeholder.com/400x300?text=Vida+Simples" alt="Vida Simples">
+        
+        <section id="cidade">
+            <h2>Vida na Cidade</h2>
+            <div class="comparison">
+                <div class="image-container" style="height: 300px;">
+                    <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Arranha-céus">
+                </div>
+                <p style="padding: 1.5rem;">As cidades são centros de inovação e desenvolvimento, onde as pessoas vivem em um ambiente dinâmico e cheio de possibilidades. A arquitetura impressionante, a vida noturna vibrante e a diversidade de pessoas criam um ambiente único que atrai milhões.</p>
             </div>
-            <p>A tranquilidade e a conexão com a natureza definem o campo. É onde a vida tem um ritmo diferente, mais calmo, e a produção de alimentos é a base de tudo. Desafios como acesso a serviços e oportunidades podem surgir.</p>
-            <ul>
-                <li>Contato direto com a natureza e ar puro.</li>
-                <li>Qualidade de vida e tranquilidade.</li>
-                <li>Fonte essencial de alimentos e recursos naturais.</li>
-            </ul>
         </section>
-
-        <section id="interconexoes" class="content-section">
-            <h2>Interconexões: A Relação que Nos Molda</h2>
-            <div class="gallery">
-                <img src="https://via.placeholder.com/400x300?text=Produto+da+Fazenda+na+Cidade" alt="Produto da fazenda chegando na cidade">
-                <img src="https://via.placeholder.com/400x300?text=Tecnologia+no+Campo" alt="Tecnologia sendo usada no campo">
+        
+        <section id="campo">
+            <h2>Vida no Campo</h2>
+            <div class="comparison">
+                <div class="image-container" style="height: 300px;">
+                    <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Paisagem rural">
+                </div>
+                <p style="padding: 1.5rem;">O campo oferece uma conexão profunda com a natureza e as tradições. O ar puro, os espaços abertos e o ritmo sazonal da vida rural proporcionam uma sensação de paz e bem-estar que é difícil de encontrar nas áreas urbanas.</p>
             </div>
-            <p>Cidade e campo não existem isoladamente. Eles se complementam e se influenciam mutuamente. O campo provê os recursos que a cidade consome, e a cidade muitas vezes inova e devolve tecnologia ao campo.</p>
-            <ul>
-                <li>A cadeia de suprimentos: como o campo alimenta a cidade.</li>
-                <li>Turismo rural e o êxodo urbano-rural.</li>
-                <li>A sustentabilidade como ponte entre os dois mundos.</li>
-            </ul>
         </section>
-
-        <section id="contato" class="content-section your-perspective">
-            <h2>Sua Perspectiva</h2>
-            <p>Qual ambiente mais te inspira? O que você acha dos desafios e belezas da cidade e do campo? Compartilhe sua visão!</p>
-            <img src="https://via.placeholder.com/600x400?text=Sua+Imagem+Aqui" alt="Sua imagem ou perspectiva">
-            <p class="quote">"A verdadeira sabedoria está em encontrar harmonia onde há contraste."</p>
+        
+        <section id="galeria">
+            <h2>Galeria de Imagens</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1496564203457-11bb12075d90?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Metrópole">
+                    <div class="gallery-caption">Metrópole movimentada</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1470004914212-05527e49370b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Natureza">
+                    <div class="gallery-caption">Paisagem natural</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1444723121867-7a241cacace9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Trânsito">
+                    <div class="gallery-caption">Trânsito urbano</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Plantação">
+                    <div class="gallery-caption">Campos agrícolas</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Parque urbano">
+                    <div class="gallery-caption">Parques urbanos</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Vida rural">
+                    <div class="gallery-caption">Vila rural</div>
+                </div>
+            </div>
         </section>
-    </main>
-
+    </div>
+    
     <footer>
-        <p>&copy; 2025 Seu Nome. Todos os direitos reservados.</p>
+        <p>&copy; 2023 Cidade vs Campo - Todos os direitos reservados</p>
+        <p>Site criado para fins educacionais</p>
     </footer>
-
 </body>
 </html>
