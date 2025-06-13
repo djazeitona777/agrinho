@@ -1,12 +1,14 @@
 /* Variáveis CSS para facilitar a manutenção */
 :root {
-    --primary-color: #3498db; /* Azul vibrante */
-    --secondary-color: #2ecc71; /* Verde fresco */
-    --text-color: #333;
-    --light-bg: #f8f8f8;
-    --dark-bg: #2c3e50; /* Cinza escuro */
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'Montserrat', sans-serif;
+    --primary-color: #6a0572; /* Um roxo profundo e sofisticado */
+    --secondary-color: #aa1e8a; /* Um tom de rosa mais suave e elegante */
+    --text-color: #36454F; /* Chumbo (Charcoal) - um cinza escuro sofisticado */
+    --light-bg: #F8F8F8; /* Quase branco, levemente off-white */
+    --dark-bg: #2C3E50; /* Cinza azulado escuro */
+    --font-heading: 'Lora', serif; /* Fonte elegante com serifa para títulos */
+    --font-body: 'Poppins', sans-serif; /* Fonte moderna e limpa para corpo */
+    --shadow-light: 0 4px 15px rgba(0,0,0,0.08);
+    --shadow-medium: 0 8px 25px rgba(0,0,0,0.12);
 }
 
 /* Reset Básico */
@@ -24,8 +26,8 @@ body {
     font-family: var(--font-body);
     color: var(--text-color);
     background-color: var(--light-bg);
-    line-height: 1.6;
-    overflow-x: hidden; /* Evita barra de rolagem horizontal indesejada */
+    line-height: 1.7; /* Maior espaçamento entre linhas para legibilidade */
+    overflow-x: hidden;
 }
 
 /* Tipografia */
@@ -33,49 +35,55 @@ h1, h2, h3 {
     font-family: var(--font-heading);
     color: var(--dark-bg);
     margin-bottom: 0.8em;
+    line-height: 1.2;
 }
 
 h1 {
-    font-size: 3.5em;
+    font-size: 4.2em; /* Um pouco maior para impacto */
     color: #fff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.6); /* Sombra mais pronunciada */
+    font-weight: 700;
 }
 
 h2 {
-    font-size: 2.5em;
+    font-size: 3em;
     text-align: center;
-    padding-bottom: 0.5em;
+    padding-bottom: 0.6em;
     position: relative;
-    margin-bottom: 1.5em;
+    margin-bottom: 1.8em;
+    font-weight: 600;
+    color: var(--primary-color); /* Títulos secundários com cor principal */
 }
 
 h2::after {
     content: '';
-    width: 80px;
-    height: 3px;
-    background-color: var(--primary-color);
+    width: 100px; /* Linha um pouco maior */
+    height: 4px; /* Mais espessa */
+    background-color: var(--secondary-color); /* Cor secundária para o detalhe */
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
 p {
-    margin-bottom: 1em;
+    margin-bottom: 1.2em;
+    font-weight: 300; /* Texto mais leve para elegância */
 }
 
 /* Botões */
 .btn-primary, .btn-secondary {
     display: inline-block;
-    padding: 12px 25px;
-    margin-top: 20px;
+    padding: 14px 30px; /* Botões um pouco maiores */
+    margin-top: 25px;
     text-decoration: none;
     border-radius: 50px;
-    transition: all 0.3s ease;
-    font-weight: bold;
+    transition: all 0.4s ease-in-out; /* Transição mais suave */
+    font-weight: 600; /* Texto mais ousado */
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px; /* Mais espaçamento entre letras */
+    box-shadow: var(--shadow-light); /* Sombra inicial sutil */
 }
 
 .btn-primary {
@@ -87,8 +95,8 @@ p {
 .btn-primary:hover {
     background-color: transparent;
     color: var(--primary-color);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+    transform: translateY(-5px) scale(1.02); /* Movimento e leve escala */
+    box-shadow: var(--shadow-medium); /* Sombra mais intensa no hover */
 }
 
 .btn-secondary {
@@ -100,21 +108,21 @@ p {
 .btn-secondary:hover {
     background-color: transparent;
     color: var(--secondary-color);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-medium);
 }
 
 /* Header - Hero Section */
 .hero {
-    background: url('https://images.unsplash.com/photo-1533100346067-17865c3645b2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
-    height: 70vh; /* Altura da viewport */
+    background: url('https://images.unsplash.com/photo-1549214732-c6504bb8421d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+    height: 85vh; /* Mais altura para um impacto visual */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #fff;
     position: relative;
-    overflow: hidden; /* Garante que o gradiente não vaze */
+    overflow: hidden;
 }
 
 .hero::before {
@@ -124,23 +132,23 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)); /* Escurece a imagem */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.8)); /* Escurece mais para destaque do texto */
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2; /* Garante que o conteúdo fique acima do overlay */
-    max-width: 800px;
-    padding: 20px;
-    animation: fadeInDown 1s ease-out;
+    z-index: 2;
+    max-width: 900px; /* Maior largura para o texto */
+    padding: 30px;
+    animation: fadeInDown 1.2s ease-out; /* Animação um pouco mais longa */
 }
 
 /* Animação para o hero-content */
 @keyframes fadeInDown {
     from {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(-30px);
     }
     to {
         opacity: 1;
@@ -150,31 +158,42 @@ p {
 
 /* Seções Principais */
 main {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
+    max-width: 1300px; /* Conteúdo um pouco mais largo */
+    margin: 60px auto; /* Mais espaçamento superior */
+    padding: 0 25px; /* Mais padding lateral */
 }
 
 section {
-    padding: 60px 0;
-    margin-bottom: 40px;
+    padding: 70px 0; /* Mais padding vertical */
+    margin-bottom: 50px;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 12px; /* Cantos mais arredondados */
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição para hover */
 }
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
 
 .intro-section {
     text-align: center;
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 40px 20px;
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 50px 30px;
+}
+.intro-section p {
+    font-size: 1.15em; /* Texto da introdução maior */
+    color: var(--text-color);
 }
 
-/* Animação para fade-in em seções */
+/* Animação para fade-in em seções (do JS) */
 .fade-in {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateY(30px); /* Começa mais abaixo */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Animação mais lenta */
 }
 
 .fade-in.appear {
@@ -184,34 +203,39 @@ section {
 
 /* Galeria de Imagens com CSS Grid */
 .gallery-section {
-    padding: 60px 20px;
+    padding: 80px 30px; /* Mais padding */
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas flexíveis */
-    gap: 25px; /* Espaçamento entre os itens */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Tamanho mínimo ajustado */
+    gap: 30px; /* Mais espaçamento entre os itens */
 }
 
 .gallery-item {
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border-radius: 15px; /* Mais arredondamento */
+    box-shadow: var(--shadow-medium); /* Sombra mais pronunciada */
     cursor: pointer;
+    transition: transform 0.3s ease-out;
 }
+.gallery-item:hover {
+    transform: translateY(-8px); /* Levanta mais no hover */
+}
+
 
 .gallery-item img {
     width: 100%;
-    height: 250px; /* Altura fixa para as imagens */
-    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    height: 280px; /* Altura um pouco maior para imagens */
+    object-fit: cover;
     display: block;
-    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+    transition: transform 0.6s ease-in-out, filter 0.6s ease-in-out; /* Transição mais lenta */
 }
 
 .gallery-item:hover img {
-    transform: scale(1.05); /* Zoom sutil na imagem */
-    filter: brightness(0.7); /* Escurece a imagem ao passar o mouse */
+    transform: scale(1.08); /* Zoom sutil mais notável */
+    filter: brightness(0.6); /* Escurece a imagem ao passar o mouse */
 }
 
 .gallery-item .overlay {
@@ -220,17 +244,23 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(var(--primary-color-rgb-val, 106, 5, 114), 0.7); /* Cor do overlay com transparência */
     color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: 25px;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Curva de animação mais sofisticada */
 }
+
+/* Definindo a cor primária em RGB para uso na função rgba */
+body {
+    --primary-color-rgb-val: 106, 5, 114; /* R, G, B de #6a0572 */
+}
+
 
 .gallery-item:hover .overlay {
     opacity: 1;
@@ -238,13 +268,15 @@ section {
 
 .overlay h3 {
     color: #fff;
-    margin-bottom: 10px;
-    font-size: 1.8em;
+    margin-bottom: 12px;
+    font-size: 2em; /* Títulos do overlay maiores */
+    font-weight: 700;
 }
 
 .overlay p {
-    font-size: 0.9em;
-    line-height: 1.4;
+    font-size: 1em; /* Texto do overlay um pouco maior */
+    line-height: 1.5;
+    opacity: 0.9;
 }
 
 /* Call to Action Section */
@@ -252,79 +284,125 @@ section {
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     color: #fff;
     text-align: center;
-    padding: 80px 20px;
-    border-radius: 8px;
-    margin-top: 60px;
+    padding: 90px 30px; /* Mais padding */
+    border-radius: 12px;
+    margin-top: 80px; /* Mais margem */
+    box-shadow: var(--shadow-medium);
 }
 
 .call-to-action h2 {
     color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 .call-to-action h2::after {
-    background-color: #fff; /* Linha branca para contraste */
+    background-color: #fff;
+}
+.call-to-action p {
+    font-size: 1.2em; /* Texto maior */
+    opacity: 0.9;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 30px;
+    padding: 40px; /* Mais padding */
     background-color: var(--dark-bg);
     color: #fff;
-    font-size: 0.9em;
-    margin-top: 50px;
+    font-size: 0.95em;
+    margin-top: 70px;
+    border-top: 5px solid var(--secondary-color); /* Detalhe no topo do footer */
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     h1 {
+        font-size: 3.5em;
+    }
+    h2 {
         font-size: 2.5em;
     }
+    .hero {
+        height: 70vh;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
 
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.8em;
+    }
     h2 {
         font-size: 2em;
+        margin-bottom: 1.5em;
     }
-
+    h2::after {
+        width: 80px;
+    }
     .hero {
-        height: 50vh;
+        height: 60vh;
     }
-
-    .gallery-grid {
-        grid-template-columns: 1fr; /* Uma coluna em telas menores */
-    }
-
     .btn-primary, .btn-secondary {
-        padding: 10px 20px;
+        padding: 12px 25px;
         font-size: 0.9em;
     }
-
-    section {
-        padding: 40px 15px;
+    main {
+        margin: 30px auto;
+        padding: 0 15px;
     }
-
+    section {
+        padding: 50px 0;
+        margin-bottom: 30px;
+    }
     .intro-section {
-        padding: 30px 15px;
+        padding: 40px 20px;
+    }
+    .intro-section p {
+        font-size: 1em;
+    }
+    .gallery-section {
+        padding: 50px 15px;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        gap: 20px;
+    }
+    .gallery-item img {
+        height: 220px;
+    }
+    .overlay h3 {
+        font-size: 1.6em;
+    }
+    .overlay p {
+        font-size: 0.9em;
+    }
+    .call-to-action {
+        padding: 60px 20px;
+        margin-top: 40px;
+    }
+    .call-to-action p {
+        font-size: 1.05em;
+    }
+    footer {
+        padding: 30px;
+        margin-top: 40px;
     }
 }
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 2em;
+        font-size: 2.2em;
     }
     h2 {
-        font-size: 1.8em;
+        font-size: 1.7em;
     }
-}
-
-
-/* JavaScript para animação de scroll */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.fade-in.appear {
-    opacity: 1;
-    transform: translateY(0);
+    .hero-content {
+        padding: 15px;
+    }
+    .btn-primary, .btn-secondary {
+        font-size: 0.8em;
+        padding: 10px 20px;
+    }
 }
