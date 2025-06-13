@@ -1,116 +1,167 @@
+/* Importar fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap');
+
 /* Estilos Gerais */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     line-height: 1.6;
-    background-color: #f4f4f4;
     color: #333;
+    background-color: #f8f8f8;
+    scroll-behavior: smooth; /* Rolagem suave ao clicar nos links */
 }
 
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden; /* Clear floats */
-}
-
-/* Header */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #2c3e50;
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
-}
-
-header nav ul {
-    padding: 0;
-    list-style: none;
-}
-
-header nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-header nav ul li a {
-    color: #fff;
+a {
     text-decoration: none;
+    color: #3498db;
 }
 
-/* Main Content */
-main {
-    padding: 20px;
-    max-width: 960px; /* Limit content width */
-    margin: 20px auto;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+a:hover {
+    color: #2980b9;
 }
 
-section {
-    margin-bottom: 30px;
-    padding: 20px;
-    border-bottom: 1px solid #eee;
-}
-
-section:last-child {
-    border-bottom: none;
-}
-
-section h2 {
-    color: #333;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-section img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 15px 0;
+.btn {
+    display: inline-block;
+    background-color: #3498db;
+    color: #fff !important;
+    padding: 12px 25px;
     border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
 }
 
-/* Formulário de Contato */
-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+.btn:hover {
+    background-color: #2980b9;
 }
 
-form input[type="text"],
-form input[type="email"],
-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box; /* Include padding in width */
-}
-
-form button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
+.btn-secundario {
+    display: inline-block;
+    background-color: #f39c12;
+    color: #fff !important;
+    padding: 8px 15px;
     border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-form button:hover {
-    background-color: #0056b3;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
     font-size: 0.9em;
 }
+
+.btn-secundario:hover {
+    background-color: #e67e22;
+}
+
+/* Hero Section (Cabeçalho com Imagem de Fundo) */
+.hero {
+    background: url('../img/cidade-campo-hero.jpg') no-repeat center center/cover; /* Altere esta imagem! */
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Overlay escuro */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #eee;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Seções Principais */
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-dupla {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards quebrem a linha em telas menores */
+    justify-content: center;
+    gap: 30px; /* Espaçamento entre os cards */
+    margin-bottom: 50px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    flex: 1 1 45%; /* Cresce e encolhe, base de 45% */
+    max-width: 500px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.card-cidade .card-icon { color: #3498db; }
+.card-campo .card-icon { color: #27ae60; }
+
+.card h2 {
+    font-size: 1.8em;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.card p {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.section-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.section-full {
+    padding: 60px 20px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff; /* Texto branco para seções com fundo */
+    box-shadow: 0 4px 1

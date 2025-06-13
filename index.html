@@ -3,55 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Homepage</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Cidade & Campo - Conectando Mundos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Bem-vindo à Minha Homepage!</h1>
-        <nav>
-            <ul>
-                <li><a href="#sobre">Sobre Mim</a></li>
-                <li><a href="#servicos">Serviços/Portfólio</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Cidade & Campo: Conectando Mundos</h1>
+            <p>Descubra a harmonia entre o dinamismo urbano e a serenidade da vida rural.</p>
+            <a href="#explorar" class="btn">Explore Ambos</a>
+        </div>
     </header>
 
     <main>
-        <section id="sobre">
-            <h2>Sobre Mim</h2>
-            <p>Olá! Este é um espaço para você me conhecer melhor. Adicione aqui informações sobre você, seus interesses ou o propósito da sua página.</p>
-            <img src="https://via.placeholder.com/400x200?text=Sua+Imagem+Aqui" alt="Descrição da Imagem">
+        <section id="explorar" class="section-dupla">
+            <div class="card card-cidade">
+                <div class="card-icon">🏙️</div>
+                <h2>A Vida na Cidade</h2>
+                <p>Onde as oportunidades florescem e a energia nunca para. Explore a arquitetura, a cultura e a inovação.</p>
+                <img src="img/cidade-vista-aerea.jpg" alt="Vista aérea de uma cidade com prédios altos" class="section-image">
+                <a href="#cidade-detalhes" class="btn-secundario">Saiba Mais sobre a Cidade</a>
+            </div>
+
+            <div class="card card-campo">
+                <div class="card-icon">🌳</div>
+                <h2>A Tranquilidade do Campo</h2>
+                <p>Respire ar puro, aprecie paisagens exuberantes e reconecte-se com a natureza e suas raízes.</p>
+                <img src="img/campo-por-do-sol.jpg" alt="Campo verde com montanhas e um pôr do sol" class="section-image">
+                <a href="#campo-detalhes" class="btn-secundario">Saiba Mais sobre o Campo</a>
+            </div>
         </section>
 
-        <section id="servicos">
-            <h2>Meus Serviços/Portfólio</h2>
-            <p>Aqui você pode listar os serviços que oferece, projetos que realizou ou qualquer outro conteúdo relevante. Use cards, listas ou galerias para organizar.</p>
-            <ul>
-                <li>Item de Portfólio 1</li>
-                <li>Item de Portfólio 2</li>
-                <li>Item de Portfólio 3</li>
-            </ul>
+        <section id="cidade-detalhes" class="section-full bg-cidade">
+            <h2>Destaques Urbanos</h2>
+            <div class="grid-layout">
+                <div class="grid-item">
+                    <h3>Arquitetura Moderna</h3>
+                    <p> Arranha-céus imponentes e designs inovadores que moldam o horizonte.</p>
+                    <img src="https://via.placeholder.com/300x200?text=Cidade+Moderna" alt="Prédio moderno">
+                </div>
+                <div class="grid-item">
+                    <h3>Cultura Vibrante</h3>
+                    <p> Museus, galerias de arte, teatros e uma cena gastronômica diversificada.</p>
+                    <img src="https://via.placeholder.com/300x200?text=Cultura+Urbana" alt="Pessoas em um museu">
+                </div>
+                <div class="grid-item">
+                    <h3>Inovação e Tecnologia</h3>
+                    <p> Centros de tecnologia e startups que impulsionam o progresso.</p>
+                    <img src="https://via.placeholder.com/300x200?text=Tecnologia+na+Cidade" alt="Servidores de computador">
+                </div>
+            </div>
         </section>
 
-        <section id="contato">
-            <h2>Entre em Contato</h2>
-            <p>Ficaria feliz em ouvir de você! Deixe uma mensagem ou encontre-me nas redes sociais.</p>
-            <form>
-                <label for="nome">Nome:</label><br>
-                <input type="text" id="nome" name="nome"><br><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email"><br><br>
-                <label for="mensagem">Mensagem:</label><br>
-                <textarea id="mensagem" name="mensagem" rows="4"></textarea><br><br>
-                <button type="submit">Enviar</button>
-            </form>
+        <section id="campo-detalhes" class="section-full bg-campo">
+            <h2>A Essência Rural</h2>
+            <div class="grid-layout">
+                <div class="grid-item">
+                    <h3>Paisagens Naturais</h3>
+                    <p> Montanhas, rios, florestas e campos abertos para explorar e relaxar.</p>
+                    <img src="https://via.placeholder.com/300x200?text=Paisagem+Rural" alt="Campo com árvores">
+                </div>
+                <div class="grid-item">
+                    <h3>Vida Sustentável</h3>
+                    <p> Fazendas orgânicas, agroecologia e a conexão com a produção de alimentos.</p>
+                    <img src="https://via.placeholder.com/300x200?text=Fazenda+Sustentavel" alt="Horta orgânica">
+                </div>
+                <div class="grid-item">
+                    <h3>Tradições e Hospitalidade</h3>
+                    <p> Festas locais, culinária típica e a calorosa recepção da comunidade rural.</p>
+                    <img src="https://via.placeholder.com/300x200?text=Vida+no+Campo" alt="Pessoa colhendo frutas">
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Minha Homepage. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Cidade & Campo. Todos os direitos reservados. Feito com 💙 em São José dos Pinhais, PR.</p>
     </footer>
 </body>
 </html>
